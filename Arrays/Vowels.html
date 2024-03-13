@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str= prompt("Enter a sentence");
+        var arr= str.split('');
+        let count=0;
+        arr.forEach((el)=>{if(el=='a' || el=='e' || el=='i' || el=='o' || el=='u' || el=='A' || el=='E' || el=='I' || el=="O" || el=='U') count++;});
+        document.write(count);
+    </script>
+</body>
+</html>
