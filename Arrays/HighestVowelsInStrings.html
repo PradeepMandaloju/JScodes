@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var arr=['pradeep','charan','bhaskarachary','divya'];
+
+        var count=0;
+        var temp=0;
+        for(let a of arr){
+            let name=a.split('');
+            
+            name.forEach((el)=>{if(el=='a' || el=='e' || el=='i' || el=='o' || el=='u' || el=='A' || el=='E' || el=='I' || el=="O" || el=='U')
+                count++; })
+
+            if(count>temp){
+            temp=count;
+            var str=a;
+            }
+            count=0;
+        }
+        document.write(str);
+    </script>
+</body>
+</html>
