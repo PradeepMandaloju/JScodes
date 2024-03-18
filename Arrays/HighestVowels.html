@@ -15,8 +15,23 @@
             count=0;
             var vowels=['a','e','i','o','u'];
             str=Array.from(el);
-            for
+            for(let i=0;i<str.length;i++)
+            {
+                vowels.forEach(vowel=>
+                {
+                    if(str[i]===vowel || str[i] ===vowel.toUpperCase())
+                    count++;
+                });
+            }
+            newarr.push(count+"<br>")
         })
+        b=newarr[0]
+        newarr.forEach((e)=>
+        {if(e>b)
+        b=e
+    })
+    ind=newarr.indexOf(b)
+    document.write(arr[ind])
     </script>
 </body>
 </html>
