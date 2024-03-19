@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+<title>Document</title>
+</head>
+<body>
+    <script>
+        var num= prompt("Enter a Number");
+        let n=0,str="";
+        while(num!=0){
+            n=num%10;
+        switch(n){
+            case 0:str+="Z";
+            break;
+            case 1:str+="O";
+            break;
+            case 2:str+="T";
+            break;
+            case 3:str+="T";
+            break;
+            case 4:str+="F";
+            break;
+            case 5:str+="F";
+            break;
+            case 6:str+="S";
+            break;
+            case 7:str+="S";
+            break;
+            case 8:str+="E";
+            break;
+            case 9:str+="N";
+            break;
+            defualt : document.write("");
+        }
+        num=parseInt(num/10);
+        }
+        document.write(str.split('').reverse().join(''));
+    </script>
+</body>
+</html>
