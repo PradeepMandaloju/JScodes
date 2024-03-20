@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+<title>Document</title>
+</head>
+<body>
+    <script>
+
+var num=prompt("Enter a Number");
+        let sum="";
+        while(num!=0){
+            rem=num%10;
+            sum=sum+rem;
+            num=parseInt(num/10);
+        }
+
+
+
+        var num1=sum;
+        let n=0;
+        while(num1!=0){
+            n=num1%10;
+        switch(n){
+            case 0:document.write("Z");
+            break;
+            case 1:document.write("O");
+            break;
+            case 2:document.write("T");
+            break;
+            case 3:document.write("T");
+            break;
+            case 4:document.write("F");
+            break;
+            case 5:document.write("F");
+            break;
+            case 6:document.write("S");
+            break;
+            case 7:document.write("S");
+            break;
+            case 8:document.write("E");
+            break;
+            case 9:document.write("N");
+            break;
+            defualt : document.write("");
+        }
+        num1=parseInt(num1/10);
+        }
+    </script>
+</body>
+</html>
