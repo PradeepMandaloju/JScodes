@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //lcm  of two numbers
+        var a = parseInt(prompt("Enter first number"));
+        var b = parseInt(prompt("enter second number"));
+        var n1=a;
+        var n2=b;
+    
+        while(b!=0)
+        {
+            var r = a%b;
+            a = b;
+            b = r;
+        }
+        var lcm = parseInt((n1*n2)/a);
+
+        document.write(`LCM of ${n1} and ${n2} is ${lcm}`);
+    </script>
+</body>
+</html>

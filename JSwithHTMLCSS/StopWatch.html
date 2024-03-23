@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .box{
+            width:1000px;
+            height:480px;
+            border: solid rgb(0, 120, 159);
+            margin-left: 200px;
+            margin-top: 100px;
+        }
+
+        #head{
+            color:rgb(0, 120, 159);
+            margin-top: 40px;
+             
+        }
+        #time{
+            margin-top: 100px;
+            color:rgb(0, 120, 159);
+            font-size: 100px;
+        }
+
+        #start{
+            background-color: rgb(0, 120, 159);
+            border: solid black;
+            color: black;
+        }
+        #start:active{
+            background-color: black;
+            border: solid rgb(0, 120, 159);
+            color:rgb(0, 120, 159);
+        }
+        #stop:active{
+            background-color: rgb(0, 120, 159);
+            border: solid black;
+            color: black;
+        }
+        #stop{
+            background-color: black;
+            border: solid rgb(0, 120, 159);
+            color:rgb(0, 120, 159);
+        }
+
+        .btn{
+            margin-left: 210px;
+        }
+
+        button{
+            padding:15px;
+            width:250px;
+            margin-left:25px;
+            border-radius: 25px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="box">
+    <h1 id="head" align="center">-- STOP WATCH --</h1>
+    <h1 id="time" align="center">00:00:00:00</h1>
+    <div class="btn">
+    <button onclick="stopfun()" id="stop"><b>Stop</b></button>
+    <button onclick="startfun()" id="start"><b>Start</b></button>
+    </div>
+</div>
+    <script>
+        var milsec=0,sec=0,min=0,hour=0;
+        function myfun(){
+            milsec++;
+            if(milsec==100){
+                sec++;
+                milsec=0;
+            }
+            if(sec==60){
+                min++;
+                sec=0;
+            }
+            if(min==60){
+                hour++;
+                min=0;
+            }
+            document.getElementById("time").innerHTML=hour.toString().padStart(2,'0')+":"+min.toString().padStart(2,'0')+":"+sec.toString().padStart(2,'0')+":"+milsec.toString().padStart(2,'0');
+        }
+
+        function startfun(){
+        res=setInterval(myfun,10);
+        }
+
+        function stopfun(){
+            clearInterval(res);
+        }        
+    </script>
+</body>
+</html>
