@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Calculator</title>
+
+    <style>
+        
+        input{
+            background-color: white;
+            padding:15px;
+            width:350px;
+            
+            margin-top: 30px;
+            margin-left:60px;
+            border:1px solid lightgray;
+            box-shadow: 3px 3px 5px 2px lightgray;
+            
+        }
+        .box{
+            background-color: black;
+            box-shadow: 5px 5px 10px 0px black;
+            border:1px solid BLACK;
+            height: 500px;
+            margin-top: 100px;
+            margin-left: 520px;
+            width:500px;
+        }
+        img{
+            position: relative;
+            margin-top: 200px;
+            margin-left: 150px;
+           }
+        
+       button{
+        background-color:rgba(255, 255, 255, 0.781) ;
+        padding:10px;
+        width: 200px;
+        margin-left: 160px;
+        margin-top:100px;
+
+       }
+       
+       h1{
+        margin-top: 50px;
+       }
+
+       ::placeholder{
+        color: black;
+       }
+
+      
+    </style>
+</head>
+<body>
+    
+<div class="box">
+    
+    <div>
+        <h1 align="center" style="color: rgba(255, 255, 255, 0.781);">BMI CALCULATOR</h1>
+    <form id="myform" >
+    <input id="height" type="number" placeholder="HEIGHT IN METERS" required>
+    <br>
+    <input id="weight" type="number" placeholder="WEIGHT IN KG" required>
+    <br>
+    <h3 id="bmi" style="position: absolute; z-index: 10;left:600px; color:rgba(255, 255, 255, 0.781);"></h3>
+    <br>
+    <br>
+    <h4 id="result" style="position: absolute; z-index: 10;left:600px; color:rgba(255, 255, 255, 0.781);"></h4>
+    <button type="submit">CALCULATE</button>
+    </form>
+    </div>
+    </div>
+
+    <script>
+    document.getElementById("myform").addEventListener('submit',(e)=>{e.preventDefault();
+        var height=document.getElementById("height").value;
+        var weight=document.getElementById("weight").value;
+        
+        var bmi=weight/(height**2);
+        var result="";
+        if(bmi>0){
+        if(bmi<18.5)
+            result="UnderWeight!";
+        else if(bmi>=18.5 && bmi<25)
+            result="HealtyWeight";
+        else if(bmi>=25 && bmi<30)
+            result="OverWeight!";
+        else
+            result="Obesity!!";
+        document.getElementById("bmi").innerHTML="BMI: "+bmi;
+        document.getElementById("result").innerHTML="You are having "+result;
+            }
+        else{document.getElementById("result").innerHTML="Invalid Inputs!";}
+            
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+

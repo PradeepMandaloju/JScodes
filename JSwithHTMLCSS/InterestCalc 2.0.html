@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Calculator</title>
+
+    <style>
+        
+        input{
+            background-color: white;
+            padding:15px;
+            width:290px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left:25px;
+            border:1px solid lightgray;
+            box-shadow: 3px 3px 5px 2px lightgray;
+            
+        }
+        .box{
+            background-color: #9AC5DB;
+            box-shadow: 5px 5px 10px 0px black;
+            border:1px solid BLACK;
+            border-top-right-radius:50px;
+            border-bottom-left-radius: 50px;
+            height: 650px;
+            margin-top: 60px;
+            margin-left: 160px;
+            width:1200px;
+        }
+        img{
+            position: relative;
+            margin-top: 200px;
+            margin-left: 150px;
+           }
+        .box1{
+            background-color: white;
+            border:1px solid BLACK;
+            border-top-left-radius:50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 5px 5px 10px 0px black;
+            width:360px;  
+            height:520px;
+            padding:10px;     
+            margin-left:750px;
+            margin-top:-430px;
+            
+        }
+       button{
+        background-color:#9AC5DB ;
+        padding:10px;
+        width: 200px;
+        border-radius: 10px;
+        margin-left: 80px;
+        margin-top:60px;
+
+       }
+       
+
+       h4{
+        margin-left: 15px;
+       }
+
+      
+    </style>
+</head>
+<body>
+    
+<div class="box">
+    <img src="https://www.financeveda.com/wp-content/uploads/2022/06/bank-logo.jpg" height="auto" width="500px">
+    <div class="box1">
+        <h1 align="center">FD CALCULATOR</h1>
+    <form id="myform" >
+    <input id="usr" type="text" placeholder="USERNAME" required>
+    <input id="age" type="number" placeholder="AGE" required>
+    <input id="amt" type="number" placeholder="AMOUNT" required>
+    <input id="tenu" type="number" placeholder="TENURE" required>
+    <h4 id="result" style="position: absolute; z-index: 10;"></h4>
+    <button type="submit">CALCULATE</button>
+    </form>
+    </div>
+    </div>
+
+    <script>
+    document.getElementById("myform").addEventListener('submit',(e)=>{e.preventDefault();
+        var username=document.getElementById("usr").value;
+        var age=document.getElementById("age").value;
+        var amt=document.getElementById("amt").value;
+        var tenu=document.getElementById("tenu").value;
+       
+        if(age>60){
+            var simpleInterest=((amt*tenu*8)/100);
+            var total=simpleInterest+parseInt(amt);
+        }
+        else{
+            var simpleInterest=((amt*tenu*6)/100);
+            var gst=(0.5/100)*simpleInterest;
+            simpleInterest=gst+simpleInterest;
+            var total=simpleInterest+parseInt(amt);
+        }
+
+        document.getElementById("result").innerHTML="Dear "+username+", your Maturity Amount is "+total+"/-";
+    } )
+    </script>
+</body>
+</html>
+
+
+
+
+
+
