@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[2,4,6,8,10,12,11];
+        var big=0, temp=0;
+        for(let a of arr){
+            if(a>big){
+                big=a;
+            }
+        }
+        for(let b of arr){
+            if(b<big && b>temp){
+                temp=b;
+            }
+        }
+        document.write(temp);
+    </script>
+</body>
+</html>
+
+
+
+
+

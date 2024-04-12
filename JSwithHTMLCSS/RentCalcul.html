@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rent</title>
+
+    <style>
+        body{
+            background-image: url("https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg");
+            background-repeat:no-repeat;
+            background-size: 1600px;
+            
+        }
+        input{
+            background-color: white;
+            padding:10px;
+            width:200px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left:110px;
+            border:1px solid lightgray;
+            box-shadow: 3px 3px 5px 2px lightgray;
+            
+        }
+        #city{
+            background-color: white;
+            padding:10px;
+            width:223px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left:110px;
+            border:1px solid lightgray;
+            box-shadow: 3px 3px 5px 2px lightgray;
+        }
+        #br{
+            background-color: white;
+            padding:10px;
+            width:223px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left:110px;
+            border:1px solid lightgray;
+            box-shadow: 3px 3px 5px 2px lightgray;
+        }
+        #bal{
+            background-color: white;
+            padding:10px;
+            width:223px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left:110px;
+            border:1px solid lightgray;
+            box-shadow: 3px 3px 5px 2px lightgray;
+        }
+        .box{
+            background-color:white;
+            border-radius:20px;
+            box-shadow: 5px 5px 5px 0.5px black;
+            width:750px;  
+            height:410px;
+            padding:10px;     
+            margin-left:360px;
+            margin-top:200px;
+            
+        }
+       button{
+        padding:10px;
+        width: 200px;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-top:80px;
+
+       }
+       .btn{
+        margin-left: 165px;
+       }
+
+       #fail{
+        margin-left: 200px;
+       }
+
+       #result{
+        margin-top: 30px;
+        margin-left: 200px;
+       }
+
+       ::placeholder{
+        color:black;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+       
+    
+        <h1 align="center">HOUSE RENT CALCULATOR</h1>
+    <form id="myform">
+    <input id="usr" type="text" placeholder="USERNAME"  required>
+    <input id="pass" type="password" placeholder="PASSWORD" required>
+    <br>
+    <select id="city" required>
+        <option value="">SELECT CITY</option>
+        <option value="5000">HYDERABAD</option>
+        <option value="3000">CHENNAI</option>
+        <option value="8000">BENGALURU</option>
+        <option value="7000">DELHI</option>
+    </select>
+    <input id="area" type="number" placeholder="AREA" required>
+    <br>
+    <select id="br" required>
+        <option value="">BED ROOMS</option>
+        <option value="15000">01</option>
+        <option value="30000">02</option>
+        <option value="450000">03</option>
+    </select>
+    <select id="bal" required>
+        <option value="">BALCONY</option>
+        <option value="50000">YES</option>
+        <option value="0">NO</option>
+    </select>
+    <br>
+    <h4 id="result" style="position: absolute; z-index: 10; color: green;"></h4>
+    <h4 id="fail" style="position: absolute; z-index: 9; color: red;"></h4>
+    <div class="btn">
+    <button >CANCEL</button>
+    <button type="submit">CALCULATE</button>
+    </div>
+    </form>
+    </div>
+
+
+    <script>
+        
+        document.getElementById("myform").addEventListener('submit',(e)=>{
+            e.preventDefault();
+        
+        var username=document.getElementById("usr").value;
+        var password=document.getElementById("pass").value;
+        var str=username.slice(0,3)+"123";
+        if(password==str){
+            var city=parseInt(document.getElementById("city").value);
+            var area=parseInt(document.getElementById("area").value);
+            var br=parseInt(document.getElementById("br").value);
+            var bal=parseInt(document.getElementById("bal").value);
+            var amt=(city*area)+br+bal;
+            var gst=(8/100)*amt;
+            var total=amt+gst;
+            document.getElementById("result").innerHTML="Dear "+username+", your total rent will be: "+total; 
+        }
+        else
+            document.getElementById("fail").innerHTML="Login: Failed! <br> Incorrect Username or Password";
+        })
+    </script>
+</body>
+</html>
