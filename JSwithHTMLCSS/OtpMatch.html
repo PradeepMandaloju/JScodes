@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input{
+            margin-left: 650px;
+            margin-top:20px;
+            padding:10px;
+        }
+        button{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body onload="otp()">
+
+    <h2 align="center" id="otp"></h2>
+    
+    <input type="number" id="num" placeholder="Enter the Otp">
+    <button onclick="run()" id="btn">Submit</button>
+
+    <h1 align="center" id="result" style="color:green;"></h1>
+    <h1 align="center" id="resultfail" style="color:red;"></h1>
+    
+    <script>
+        var str="";
+       function otp(){
+       
+        for(let i=0;i<=5;i++){
+        var num=Math.floor(Math.random()*10);
+        str=str+num;
+        }
+        document.getElementById("otp").innerHTML="Otp: "+str;
+
+       
+     }
+
+     function run(){
+        var a=document.getElementById("num").value;
+
+        if(a==str){
+            document.getElementById("result").innerHTML="Otp Verified!";
+        }
+        else{
+            document.getElementById("resultfail").innerHTML="Invalid Otp!!";
+        }
+     }
+     
+    </script>
+</body>
+</html>

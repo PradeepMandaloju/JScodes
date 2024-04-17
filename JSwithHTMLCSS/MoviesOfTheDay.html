@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies of the day!</title>
+
+    <style>
+        #date{
+            padding:10px;
+            margin-left:700px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myform">
+    <input id="date" type="date" required>
+    <button id="btn" type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("myform").addEventListener('submit',(e)=>{
+            e.preventDefault();
+
+        var d=document.getElementById("date").value;
+
+        function movie(Movie,Cast,Director,Releasing){
+            this.Movie=Movie;
+            this.Cast=Cast;
+            this.Director=Director;
+            this.Releasing=Releasing;
+        }
+
+        let m1=new movie("Hanuman","Teja Sajja","Prasanth Varma","2024-01-01");
+        let m2=new movie("Oppenheimer","Cillian Murphy","Christopher Nolan","2024-01-01");
+        let m3=new movie("Salar","Prabhas","Neel Mawa","2024-01-02");
+        let m4=new movie("Animal","Ranbir Kapoor","Sandeep Reddy","2024-01-02");
+
+        let Arr=[m1,m2,m3,m4];
+
+        for(let a of Arr){
+            
+            if(a.Releasing==d){
+                
+                for(let i in a){
+                    document.write(i+":"+a[i]+"<br>")
+                }
+                document.write("<br>");
+            }
+        }
+    })
+    </script>
+
+
+</body>
+</html>
