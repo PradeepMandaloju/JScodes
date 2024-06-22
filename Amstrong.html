@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+9o<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,8 @@
 </head>
 <body>
     <script>
-    var num=prompt("Enter a number");
+    var num=parseInt(prompt("Enter a number"));
+    var temp=num;
         let sum=0;
     //var temp=num;
     var counter=0;
@@ -16,10 +17,10 @@
         counter++;
     }
     
-    while(num!=0){
-        rem=num%10;
+    while(temp!=0){
+        rem=temp%10;
         sum=sum+(rem**counter);
-        num=parseInt(num/10);
+        temp=parseInt(temp/10);
     }
         document.write(sum)
 
